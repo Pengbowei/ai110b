@@ -114,6 +114,7 @@ class Game:
         play_regret_matching() if not avg_regret_matching else play_avg_regret_matching()
         print (num_wins)
 
+
     def conclude(self):
         """
         let two players conclude the average strategy from the previous strategy stats 

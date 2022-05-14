@@ -1,5 +1,5 @@
 
-此程式來[來源](#https://gist.github.com/namoshizun/7a3b820b013f8e367e84c70b45af7c34)
+此程式[來源](https://gist.github.com/namoshizun/7a3b820b013f8e367e84c70b45af7c34)
 
 
 ## 定義玩家猜拳基本參數
@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
 * 賽局定義兩位玩家P1、P2：「Alasdair」、「Calum」。
 * 進行10000局猜拳。
-* [更新策略](#更新策略) -> [決策](#決策) -> []()
+* [更新策略](#更新策略) -> [決策](#決策) -> [更新遺憾值](#更新遺憾值)
 ```
 class Game:
     def __init__(self, max_game=10000):
@@ -78,8 +78,9 @@ class Game:
     print (num_wins)
 ```
 
-## 更新策略
-* self.strategy 為 4 x 3 Array,儲存的值為更新後的策略機率。
+## 策略更新
+* 從累積的遺憾值計算遺憾匹配策略。
+* 儲存計算後策略機率，接下來會根據策略機率做決策。
 ```
 def update_strategy(self):
         """
@@ -102,7 +103,7 @@ def update_strategy(self):
 ```
 
 ## 決策
-* 依照更新完後的策略機率對賽局做出動作
+* 依照更新完後的策略機率對賽局做出決策。
 ```
 def action(self, use_avg=False):
         """
@@ -110,4 +111,19 @@ def action(self, use_avg=False):
         """
         strategy = self.avg_strategy if use_avg else self.strategy
         return np.random.choice(RPS.actions, p=strategy)
+```
+
+## 更新遺憾值
+* 計算玩家的遺憾並加入累積的遺憾總和中。
+```
+def regret(self, my_action, opp_action):
+        """
+        we here define the regret of not having chosen an action as the difference between the utility of that action
+        and the utility of the action we actually chose, with respect to the fixed choices of the other player.
+        compute the regret and add it to regret sum.
+        """
+        result = RPS.utilities.loc[my_action, opp_action]
+        facts = RPS.utilities.loc[:, opp_action].values
+        regret = facts - result
+        self.regret_sum += regret
 ```
