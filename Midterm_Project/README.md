@@ -27,7 +27,7 @@
 * 若二人都保持沉默，則二人同樣判刑1年。
 * 若二人都互相背叛，則二人同樣判監8年。
 <div  align="center">
-    <img src="./pic/tree.jpg" width = "500" height = "100"/>
+    <img src="./pic/PD.jpg" width = "500" height = "100"/>
 </div>
 
 &emsp;&emsp;整理A、B囚犯收益比如下：<br>
