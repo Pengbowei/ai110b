@@ -21,16 +21,16 @@
 </div>
 
 ### 納什均衡： [資料來源](https://veracityconsultant.com.tw/what-is-game-theory/)
-&emsp;&emsp;納什均衡最具代表性的的例子就是「[囚途困境](https://www.youtube.com/watch?v=svoKR8mfNfU)」：<br>
+納什均衡最具代表性的的例子就是「[囚途困境](https://www.youtube.com/watch?v=svoKR8mfNfU)」：<br>
 &emsp;&emsp;警方逮捕A、B兩名嫌疑犯，但沒有足夠證據指控二人有罪。於是警方分開囚禁嫌疑犯，分別和二人見面，並向雙方提供以下相同的選擇：
 * 若一人認罪並且指證對方（背叛者），而對方（遭背叛者）保持沉默，背叛者將立刻釋放，遭背叛者將判監10年。
 * 若二人都保持沉默，則二人同樣判刑1年。
 * 若二人都互相背叛，則二人同樣判監8年。
 <div  align="center">
-    <img src="./pic/PD.jpg" width = "500" height = "100"/>
+    <img src="./pic/PD.jpg" width = "500" height = "150"/>
 </div>
 
-&emsp;&emsp;整理A、B囚犯收益比如下：<br>
+整理A、B囚犯收益比如下：<br>
 * AB囚犯一起認罪且指證對方，收益比為（-8,-8）
 * A指認，最佳收益比為（0,-10）
 * B指認，最佳收益比為（-10,0）
@@ -38,27 +38,27 @@
 
 &emsp;&emsp;使用賽局矩陣來表示這場賽局：<br>
 <div  align="center">
-    <img src="./pic/PD1.png" width = "500" height = "100"/>
+    <img src="./pic/PD1.png" width = "500" height = "150"/>
 </div>
 
 &emsp;&emsp;若*B囚犯*選擇「坦白」，那麼*Ａ囚犯*最佳解就是「坦白」，否則最慘將面臨10年的徒刑。 <br>
 <div  align="center">
-    <img src="./pic/PD2.png" width = "500" height = "100"/>
+    <img src="./pic/PD2.png" width = "500" height = "150"/>
 </div>
 
 &emsp;&emsp;如果*Ｂ囚犯*選擇抗拒，那麼*Ａ囚犯*最佳解也是「坦白」，可以完全不用坐牢！<br>
 <div  align="center">
-    <img src="./pic/PD3.png" width = "500" height = "100"/>
+    <img src="./pic/PD3.png" width = "500" height = "150"/>
 </div>
 
 &emsp;&emsp;如果*Ａ囚犯*選擇坦白，那麼*Ｂ囚犯*最佳解就是也跟者「坦白」，否則最慘將面臨10年的徒刑。<br>
 <div  align="center">
-    <img src="./pic/PD4.png" width = "500" height = "100"/>
+    <img src="./pic/PD4.png" width = "500" height = "150"/>
 </div>
 
 &emsp;&emsp;如果*Ａ囚犯*選擇抗拒，那麼*Ｂ囚犯*最佳解也是「坦白」，可以完全逃過牢獄之災。<br>
 <div  align="center">
-    <img src="./pic/PD5.png" width = "500" height = "100"/>
+    <img src="./pic/PD5.png" width = "500" height = "150"/>
 </div>
 
 &emsp;&emsp;在這個例子中，兩個歹徒都認罪就是**納什均衡**點，在納什均衡的情況下，沒人擁有改變決策的動力，因為只要改變決策就會使自己的收益減少。納什均衡不一定是賽局中的最優解，關鍵在於能否信任或掌握對方的判斷。能掌握或與對方預先共謀，便能在賽局中取得雙贏；反之則是兩敗俱傷。
