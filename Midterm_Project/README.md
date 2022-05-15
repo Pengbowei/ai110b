@@ -38,33 +38,28 @@
 
 &emsp;&emsp;使用賽局矩陣來表示這場賽局：<br>
 <div  align="center">
-    <img src="./pic/PD1.jpg" width = "200" height = "150"/>
+    <img src="./pic/PD1.png" width = "500" height = "100"/>
 </div>
-![](/Midterm_Project/pic/PD1.png)
 
 &emsp;&emsp;若*B囚犯*選擇「坦白」，那麼*Ａ囚犯*最佳解就是「坦白」，否則最慘將面臨10年的徒刑。 <br>
 <div  align="center">
-    <img src="./pic/tree.jpg" width = "200" height = "150"/>
+    <img src="./pic/PD2.png" width = "500" height = "100"/>
 </div>
-![](/Midterm_Project/pic/PD2.png)
 
 &emsp;&emsp;如果*Ｂ囚犯*選擇抗拒，那麼*Ａ囚犯*最佳解也是「坦白」，可以完全不用坐牢！<br>
 <div  align="center">
-    <img src="./pic/tree.jpg" width = "200" height = "150"/>
+    <img src="./pic/PD3.png" width = "500" height = "100"/>
 </div>
-![](/Midterm_Project/pic/PD3.png)
 
 &emsp;&emsp;如果*Ａ囚犯*選擇坦白，那麼*Ｂ囚犯*最佳解就是也跟者「坦白」，否則最慘將面臨10年的徒刑。<br>
 <div  align="center">
-    <img src="./pic/tree.jpg" width = "200" height = "150"/>
+    <img src="./pic/PD4.png" width = "500" height = "100"/>
 </div>
-![](/Midterm_Project/pic/PD4.png)
 
 &emsp;&emsp;如果*Ａ囚犯*選擇抗拒，那麼*Ｂ囚犯*最佳解也是「坦白」，可以完全逃過牢獄之災。<br>
 <div  align="center">
-    <img src="./pic/tree.jpg" width = "200" height = "150"/>
+    <img src="./pic/PD5.png" width = "500" height = "100"/>
 </div>
-![](/Midterm_Project/pic/PD5.png)
 
 &emsp;&emsp;在這個例子中，兩個歹徒都認罪就是**納什均衡**點，在納什均衡的情況下，沒人擁有改變決策的動力，因為只要改變決策就會使自己的收益減少。納什均衡不一定是賽局中的最優解，關鍵在於能否信任或掌握對方的判斷。能掌握或與對方預先共謀，便能在賽局中取得雙贏；反之則是兩敗俱傷。
 
