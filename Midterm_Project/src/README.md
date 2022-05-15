@@ -2,7 +2,7 @@
 此程式[來源](https://gist.github.com/namoshizun/7a3b820b013f8e367e84c70b45af7c34)
 
 
-## 定義玩家猜拳基本參數
+## 定義玩家猜拳基本參數 
 * *utilities*：<br>
 定義行為「玩家1」; 列為「玩家2」<br>
 遊戲中勝利值為 **1** ; 敗值為 **-1** <br>
