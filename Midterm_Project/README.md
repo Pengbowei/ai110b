@@ -58,7 +58,8 @@ def action(self, use_avg=False):
 <div  align="center">
     <img src="./pic/RM.png" width="300"/>
 </div>
-其中
+
+* 其中若累積的遺憾值小於0，可以採取任何策略
 <div  align="center">
     <img src="./pic/RM2.png" width="200" />
 </div>
@@ -66,8 +67,7 @@ def action(self, use_avg=False):
 ```
 self.strategy[self.strategy < 0] = 0
 ```
-* 若累積的遺憾值小於0，可以採取任何策略<br>
-* 若累積的遺憾值大於0，則動作的分佈如下：
+* 若累積的遺憾值大於0，則A的機率分佈如下：
 ```
 [0.2, 0.5, 0.3]
 ```
