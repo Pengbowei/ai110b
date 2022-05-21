@@ -67,7 +67,7 @@ def action(self, use_avg=False):
 ```
 self.strategy[self.strategy < 0] = 0
 ```
-* 若累積的遺憾值大於0，則A的機率分佈如下：
+* 若累積的遺憾值大於0，則A的可能機率分佈如下：
 ```
 [0.2, 0.5, 0.3]
 ```
