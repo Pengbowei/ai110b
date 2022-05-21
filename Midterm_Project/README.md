@@ -10,6 +10,7 @@
 
 ### 遺憾值：[資料來源](https://zhuanlan.zhihu.com/p/139696555)
 整個 RM 演算法的最終目的就是將遺憾值最小化，達到納什均衡：
+* 定義動作 a 的效益為<math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>u</mi><mi>t</mi></msup><mo>(</mo><mi>a</mi><mo>)</mo></math>
 
 ### 遺憾匹配（RM）
 將猜拳定義為一種存在納什均衡的零和遊戲，*零和* 意指為所有動作的效用和為零，程式中定義效用矩陣如下：
