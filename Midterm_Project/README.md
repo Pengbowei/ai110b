@@ -33,12 +33,44 @@ class RPS:
 * 策略 **σᵢ(s)** 作為 玩家i 選擇動作 s 的機率。<br>
 
 在 t+1 輪，動作 a 被選擇的機率為：
+
+```
+def update_strategy(self):
+    self.strategy = np.copy(self.regret_sum)
+    self.strategy[self.strategy < 0] = 0  # reset negative regrets to zero
+
+    summation = sum(self.strategy)
+    if summation > 0:
+        # normalise
+        self.strategy /= summation
+
+def regret(self, my_action, opp_action):
+    result = RPS.utilities.loc[my_action, opp_action]
+    facts = RPS.utilities.loc[:, opp_action].values
+    regret = facts - result
+    self.regret_sum += regret
+
+def action(self, use_avg=False):
+    strategy = self.avg_strategy if use_avg else self.strategy
+    return np.random.choice(RPS.actions, p=strategy)
+```
+
 <div  align="center">
-    <img src="./pic/RM.svg"/>
+    <img src="./pic/RM.png" width="300"/>
 </div>
+其中
 <div  align="center">
-    <img src="./pic/RM2.svg" width="100" />
+    <img src="./pic/RM2.png" width="200" />
 </div>
+
+```
+self.strategy[self.strategy < 0] = 0
+```
+* 若累積的遺憾值小於0，可以採取任何策略<br>
+* 若累積的遺憾值大於0，則動作的分佈如下：
+```
+[0.2, 0.5, 0.3]
+```
  
 ### 納什均衡： [資料來源](https://veracityconsultant.com.tw/what-is-game-theory/)
 納什均衡最具代表性的的例子就是「[囚途困境](https://www.youtube.com/watch?v=svoKR8mfNfU)」：<br>
