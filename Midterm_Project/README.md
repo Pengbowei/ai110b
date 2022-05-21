@@ -10,7 +10,7 @@
 
 ### 遺憾值：[資料來源](https://zhuanlan.zhihu.com/p/139696555)
 整個 RM 演算法的最終目的就是將遺憾值最小化，達到納什均衡：
-* 定義動作 a 的效益為<math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>u</mi><mi>t</mi></msup><mo>(</mo><mi>a</mi><mo>)</mo></math>
+* 在 t 回合時定義 u 為動作 a 的效益。
 
 ### 遺憾匹配（RM）
 將猜拳定義為一種存在納什均衡的零和遊戲，*零和* 意指為所有動作的效用和為零，程式中定義效用矩陣如下：
@@ -32,6 +32,24 @@ class RPS:
 * A = {S, P, R} 為玩家可以做的動作，每位玩家都相同
 * u是儲存玩家使用某策略的回報量，根據上面的例子，玩家a的u = 1 ; 玩家b的u = -1。
 * 策略 **σᵢ(s)** 作為 玩家i 選擇動作 s 的機率。<br>
+
+在第 t 回合時，選擇動作 a 的收益為：
+<div  align="center">
+    <img src="./pic/regert.png" width="300"/>
+</div>
+
+假設 S 為一個候選策略集合，$s_a$ 表示該回合選擇動作 a ，其遺憾值為：
+<div  align="center">
+    <img src="./pic/regert2.png" width="300"/>
+</div>
+
+```
+def regret(self, my_action, opp_action):
+    result = RPS.utilities.loc[my_action, opp_action]
+    facts = RPS.utilities.loc[:, opp_action].values
+    regret = facts - result
+    self.regret_sum += regret
+```
 
 在 t+1 輪，動作 a 被選擇的機率為：
 
