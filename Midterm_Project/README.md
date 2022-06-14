@@ -13,7 +13,7 @@
 
 ### 遺憾匹配（RM）：以猜拳為例
 將猜拳定義為一種存在納什均衡的零和遊戲。*零和* 意指為所有動作的效用和為零，程式中定義效用矩陣如下：
-```
+```py
 class RPS:
     actions = ['ROCK', 'PAPER', 'SCISSORS']
     n_actions = 3
@@ -42,7 +42,7 @@ class RPS:
     <img src="./pic/regert2.png" width="300"/>
 </div>
 
-```
+```py
 def regret(self, my_action, opp_action):
     result = RPS.utilities.loc[my_action, opp_action]
     facts = RPS.utilities.loc[:, opp_action].values
@@ -52,7 +52,7 @@ def regret(self, my_action, opp_action):
 
 在 t+1 輪，動作 a 被選擇的機率為：
 
-```
+```py
 def update_strategy(self):
     self.strategy = np.copy(self.regret_sum)
     self.strategy[self.strategy < 0] = 0  # reset negative regrets to zero

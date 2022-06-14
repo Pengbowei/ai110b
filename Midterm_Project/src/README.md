@@ -7,7 +7,7 @@
 定義行為「玩家1」; 列為「玩家2」<br>
 遊戲中勝利值為 **1** ; 敗值為 **-1** <br>
 遊戲狀態(P1 = ROCK ; P2 = PAPER) 調用`utilities.loc['ROCK', 'PAPER']`。
-```
+```py
 class RPS:
     actions = ['ROCK', 'PAPER', 'SCISSORS']
     n_actions = 3
@@ -23,7 +23,7 @@ class RPS:
 * **regret_sum**：每次迭代後遺憾值總和。
 * **avg_strategy**：平衡策略使其收斂達納什均衡。
 * **strategy_sum**, **regret_sum** 定義為 4 x 3 Array。
-```
+```py
 class Player:
     def __init__(self, name):
         self.strategy, self.avg_strategy,\
@@ -33,7 +33,7 @@ class Player:
 
 ## 賽局進行
 * 開始
-```
+```py
 if __name__ == '__main__':
     game = Game()
 
@@ -47,7 +47,7 @@ if __name__ == '__main__':
 * 賽局定義兩位玩家P1、P2：「Alasdair」、「Calum」。
 * 進行10000局猜拳。
 * [更新策略](#更新策略) -> [決策](#決策) -> [依據賽局結果更新遺憾值](#更新遺憾值)
-```
+```py
 class Game:
     def __init__(self, max_game=10000):
         self.p1 = Player('Alasdair')
@@ -81,7 +81,7 @@ class Game:
 ## 策略更新
 * 從累積的遺憾值計算遺憾匹配策略。
 * 儲存計算後策略機率，接下來會根據策略機率做決策。
-```
+```py
 def update_strategy(self):
         """
         set the preference (strategy) of choosing an action to be proportional to positive regrets
@@ -104,7 +104,7 @@ def update_strategy(self):
 
 ## 決策
 * 依照更新完後的策略機率對賽局做出決策。
-```
+```py
 def action(self, use_avg=False):
         """
         select an action according to strategy probabilities
@@ -115,7 +115,7 @@ def action(self, use_avg=False):
 
 ## 更新遺憾值
 * 計算玩家的遺憾並加入累積的遺憾總和中。
-```
+```py
 def regret(self, my_action, opp_action):
         """
         we here define the regret of not having chosen an action as the difference between the utility of that action
